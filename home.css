@@ -1,0 +1,46 @@
+body{
+    font-size:15px;
+    font-family: Helvetica,sans-serif;
+}
+section.topbar{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:17px 10px;
+    background:#D43c33;
+    /*padding:5.3125vw 3.125vw*/
+}
+section.topbar .logo >svg{
+    width:142px;
+    /*width:44.375vw
+    height:7.8125vw
+    */
+    height: 25px;
+    vertical-align: top;
+}
+section.topbar > a{
+    color:white;
+    display:inline-block;
+    font-size:15px;
+    /*
+    font-size:4.6875vw
+    padding:1.5625vw 3.4375vw
+    line-height:6.25vw;
+    */
+    padding:5px 10px;
+    line-height: 20px;
+    position: relative;
+}
+section.topbar > a::after{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    border-radius:50px;
+    /*border-radius:15.625vw*/
+    width:200%;
+    height: 200%;
+    border:1px solid white;
+    transform:scale(0.5);
+    transform-origin:0 0 ;
+}
