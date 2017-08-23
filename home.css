@@ -1,13 +1,21 @@
 body{
     font-size:15px;
     font-family: Helvetica,sans-serif;
+    color:#333;
 }
+
+/*topbar*/
 section.topbar{
     display:flex;
     justify-content: space-between;
     align-items:center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
     padding:17px 10px;
     background:#D43c33;
+    z-index:99;
     /*padding:5.3125vw 3.125vw*/
 }
 section.topbar .logo >svg{
@@ -43,4 +51,195 @@ section.topbar > a::after{
     border:1px solid white;
     transform:scale(0.5);
     transform-origin:0 0 ;
+}
+
+/*tabs组件 */
+.tabs{
+    display:flex;
+    border-bottom:1px solid #ccc;
+    position:fixed;
+    width:100%;
+    top: 64px;
+    left: 0;
+    z-index:1;
+    background:#fff;
+}
+.tabs >li {
+    width:33.333333%;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tabs > li > .text{
+    padding:10px 5px;
+    position:relative;
+}
+.tabs > li.active{
+    color: #d33a31;
+}
+.tabs > li.active > .text::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    background: #D43C33;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+/*推荐歌单*/
+.tab-content >li {
+    display:none;
+}
+.tab-content > li.active{
+    display:block;
+}
+
+.playlists{
+    margin-top:101px;
+    padding-top:20px;
+}
+.playlists > h2{
+    font-size:17px;
+    margin-bottom:14px;
+    position: relative;
+    padding-left:9px;
+}
+.playlists > h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -9px;
+    width: 2px;
+    height: 16px;
+    background-color: #d33a31;
+}
+.playlists > .song{
+    
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    font-size:13px;
+}
+.playlists > .song > li{
+    width:32.8%;
+    padding-bottom:16px;
+    position: relative;
+}
+.playlists > .song > li > .cover > img{
+    width:100%;
+}
+.playlists > .song > li > p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 18px;
+    height: 36px;
+    padding: 6px 2px 0 6px;
+}
+.playlists > .song > li > i{
+    position: absolute;
+    top:2px;
+    right:5px;
+    font-size:12px;
+    color:white;
+}
+
+/*最新音乐*/
+
+.songs{
+    padding-top:20px;
+}
+.songs > h2{
+    font-size:17px;
+    margin-bottom:14px;
+    position: relative;
+    padding-left:9px;
+}
+.songs > h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -9px;
+    width: 2px;
+    height: 16px;
+    background-color: #d33a31;
+}
+.songs > .list > li{
+    padding:6px 0;
+    padding-left:10px;
+    position:relative;
+}
+.songs > .list > li > h3{
+    font-size:17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right:50px;
+    margin-bottom:4px;
+}
+.songs > .list > li > h3 > span{
+    margin-left:4px;
+    color:#888;
+}
+.songs > .list > li > h3 > .black{
+    margin-left:4px;
+    color:#333;
+}
+.songs > .list > li > p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:12px;
+    margin-right:50px;
+}
+.songs > .list > li > p > i{
+    display:inline-block;
+    width: 12px;
+    height: 8px;
+    margin-right: 4px;
+    background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat;
+    background-size: 166px 97px;
+}
+.songs > .list > li > a{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-position: -24px 0;
+    background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat -24px 0;
+    background-size: 166px 97px;
+    position: absolute;
+    right:10px;
+    top:15px;
+}
+
+/*网易云音乐大logo*/
+
+.art{
+    padding-top:60px;
+    text-align:center;
+    padding-bottom:18px;
+}
+.art > .logo >svg{
+    width: 230px;
+    height: 44px;
+}
+.art > .link{
+    line-height: 38px;
+    border: 1px solid #d33a31;
+    border-radius: 38px;
+    font-size: 16px;
+    color: #d33a31;
+    margin: 15px 37px 5px;
+}
+.art > .copyright{
+    color: #888;
+    font-size: 12px;
+    line-height: 16px;
+    transform: scale(.75);
 }
