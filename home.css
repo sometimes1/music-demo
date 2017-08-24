@@ -56,7 +56,7 @@ section.topbar > a::after{
 /*tabs组件 */
 .tabs{
     display:flex;
-    border-bottom:1px solid #ccc;
+    border-bottom:1px solid #e8e8e8;
     position:fixed;
     width:100%;
     top: 64px;
