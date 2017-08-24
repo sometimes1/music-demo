@@ -171,9 +171,10 @@ section.topbar > a::after{
     background-color: #d33a31;
 }
 .songs > .list > li{
-    padding:6px 0;
+    padding:7px 0;
     padding-left:10px;
     position:relative;
+    border-bottom:1px solid #e8e8e8;
 }
 .songs > .list > li > h3{
     font-size:17px;
