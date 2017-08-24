@@ -126,7 +126,7 @@ section.topbar > a::after{
 }
 .playlists > .song > li{
     width:32.8%;
-    padding-bottom:16px;
+    padding-bottom:10px;
     position: relative;
 }
 .playlists > .song > li > .cover > img{
