@@ -180,10 +180,16 @@ border::after{
     margin-bottom:-3px;
 }
 .songs > .list > li{
+<<<<<<< HEAD
     padding:6px  0;
     padding-left:9px;
     position:relative;
     bottom:1;
+=======
+    padding:7px 0;
+    padding-left:10px;
+    position:relative;
+>>>>>>> 3c3ddef8abf905d9fd83074e8b4e1ff573ff539e
     border-bottom:1px solid #e8e8e8;
 }
 
