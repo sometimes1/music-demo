@@ -139,7 +139,7 @@ section.topbar > a::after{
     overflow: hidden;
     line-height: 18px;
     height: 43px;
-    padding: 6px 2px 0 6px;
+    padding: 3px 2px 0 6px;
 }
 .playlists > .song > li > i{
     position: absolute;
