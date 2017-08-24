@@ -56,13 +56,18 @@ section.topbar > a::after{
 /*tabs组件 */
 .tabs{
     display:flex;
-    border-bottom:1px solid #ccc;
+    border-bottom:1px solid #e8e8e8;
     position:fixed;
     width:100%;
     top: 64px;
     left: 0;
     z-index:1;
     background:#fff;
+}
+border::after{
+    width: 200%;
+    height: 200%;
+    transform: scale(.5);
 }
 .tabs >li {
     width:33.333333%;
@@ -126,7 +131,7 @@ section.topbar > a::after{
 }
 .playlists > .song > li{
     width:32.8%;
-    padding-bottom:16px;
+    padding-bottom:10px;
     position: relative;
 }
 .playlists > .song > li > .cover > img{
@@ -138,8 +143,8 @@ section.topbar > a::after{
     -webkit-line-clamp: 2;
     overflow: hidden;
     line-height: 18px;
-    height: 43px;
-    padding: 6px 2px 0 6px;
+    height: 40px;
+    padding: 3px 2px 0 6px;
 }
 .playlists > .song > li > i{
     position: absolute;
@@ -152,11 +157,12 @@ section.topbar > a::after{
 /*最新音乐*/
 
 .songs{
-    padding-top:20px;
+    padding-top:22px;
 }
 .songs > h2{
     font-size:17px;
-    margin-bottom:14px;
+    margin-bottom:15px;
+    line-height: 20px;
     position: relative;
     padding-left:9px;
 }
@@ -164,24 +170,31 @@ section.topbar > a::after{
     content: "";
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 55%;
     margin-top: -9px;
     width: 2px;
     height: 16px;
     background-color: #d33a31;
 }
-.songs > .list > li{
-    padding:6px 0;
-    padding-left:10px;
-    position:relative;
+.songs > .list{
+    margin-bottom:-3px;
 }
+.songs > .list > li{
+    padding:6px  0;
+    padding-left:9px;
+    position:relative;
+    bottom:1;
+    border-bottom:1px solid #e8e8e8;
+}
+
 .songs > .list > li > h3{
     font-size:17px;
     overflow: hidden;
+    line-height: 22px;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-right:50px;
-    margin-bottom:4px;
+    margin-bottom:2px;
 }
 .songs > .list > li > h3 > span{
     margin-left:4px;
@@ -196,6 +209,7 @@ section.topbar > a::after{
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size:12px;
+    line-height: 18px;
     margin-right:50px;
 }
 .songs > .list > li > p > i{
@@ -221,9 +235,11 @@ section.topbar > a::after{
 /*网易云音乐大logo*/
 
 .art{
-    padding-top:60px;
+    padding-top:70px;
     text-align:center;
     padding-bottom:18px;
+    background:url(//i.loli.net/2017/08/24/599e6aa8a91c2.png) no-repeat;
+    background-size:contain;
 }
 .art > .logo >svg{
     width: 230px;
@@ -235,7 +251,7 @@ section.topbar > a::after{
     border-radius: 38px;
     font-size: 16px;
     color: #d33a31;
-    margin: 15px 37px 5px;
+    margin: 12px 37px 5px;
 }
 .art > .copyright{
     color: #888;
