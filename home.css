@@ -170,7 +170,7 @@ border::after{
     content: "";
     position: absolute;
     left: 0;
-    top: 55%;
+    top: 50%;
     margin-top: -9px;
     width: 2px;
     height: 16px;
@@ -180,16 +180,12 @@ border::after{
     margin-bottom:-3px;
 }
 .songs > .list > li{
-<<<<<<< HEAD
     padding:6px  0;
     padding-left:9px;
     position:relative;
     bottom:1;
-=======
-    padding:7px 0;
     padding-left:10px;
     position:relative;
->>>>>>> 3c3ddef8abf905d9fd83074e8b4e1ff573ff539e
     border-bottom:1px solid #e8e8e8;
 }
 
@@ -234,8 +230,9 @@ border::after{
     background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat -24px 0;
     background-size: 166px 97px;
     position: absolute;
+    margin:16px 0;
     right:10px;
-    top:15px;
+    top:0;
 }
 
 /*网易云音乐大logo*/
