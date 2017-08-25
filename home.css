@@ -64,11 +64,6 @@ section.topbar > a::after{
     z-index:1;
     background:#fff;
 }
-border::after{
-    width: 200%;
-    height: 200%;
-    transform: scale(.5);
-}
 .tabs >li {
     width:33.333333%;
     color: #333;
@@ -208,6 +203,7 @@ border::after{
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size:12px;
+    color:#888;
     line-height: 18px;
     margin-right:30px;
 }
