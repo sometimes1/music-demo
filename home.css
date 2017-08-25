@@ -64,6 +64,11 @@ section.topbar > a::after{
     z-index:1;
     background:#fff;
 }
+/*border::after{
+    width: 200%;
+    height: 200%;
+    transform: scale(.5);
+}*/
 .tabs >li {
     width:33.333333%;
     color: #333;
@@ -156,7 +161,7 @@ section.topbar > a::after{
 }
 .songs > h2{
     font-size:17px;
-    margin-bottom:15px;
+    margin-bottom:14px;
     line-height: 20px;
     position: relative;
     padding-left:9px;
@@ -171,12 +176,10 @@ section.topbar > a::after{
     height: 16px;
     background-color: #d33a31;
 }
-.songs > .list{
-    margin-bottom:-3px;
-}
+
 .songs > .list > li{
     padding:6px  0;
-    margin-left:9px;
+    margin-left:10px;
     position:relative;
     border-bottom:1px solid #e8e8e8;
 }
@@ -184,11 +187,10 @@ section.topbar > a::after{
 .songs > .list > li > h3{
     font-size:17px;
     overflow: hidden;
-    line-height: 22px;
+    line-height: 24px;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-right:30px;
-    margin-bottom:2px;
 }
 .songs > .list > li > h3 > span{
     margin-left:4px;
@@ -216,32 +218,43 @@ section.topbar > a::after{
     background-size: 166px 97px;
 }
 .songs > .list > li > a{
-    display: inline-block;
     width: 22px;
     height: 22px;
     background-position: -24px 0;
     background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat -24px 0;
     background-size: 166px 97px;
     position: absolute;
-    margin:16px 0;
     right:10px;
-    top:0;
+    bottom:50%;
+    transform: translateY(50%);
 }
 
 /*网易云音乐大logo*/
 
 .art{
-    padding-top:70px;
-    text-align:center;
-    padding-bottom:18px;
+    padding-top:53.3%;
+    margin-top:4px;
     background:url(//i.loli.net/2017/08/24/599e6aa8a91c2.png) no-repeat;
     background-size:contain;
+    position:relative;
 }
-.art > .logo >svg{
+.logo-top{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    text-align:center;
+}
+.logo-top > .logo {
+    padding-top:16.9%;
+}
+.logo-top > .logo >svg{
     width: 230px;
     height: 44px;
 }
-.art > .link{
+.logo-top > .link{
     line-height: 38px;
     border: 1px solid #d33a31;
     border-radius: 38px;
@@ -249,7 +262,7 @@ section.topbar > a::after{
     color: #d33a31;
     margin: 12px 37px 5px;
 }
-.art > .copyright{
+.logo-top > .copyright{
     color: #888;
     font-size: 12px;
     line-height: 16px;
