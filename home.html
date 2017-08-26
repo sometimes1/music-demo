@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_359189_togl1cpw7pue4s4i.css">
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./vendors/loaders.min.css">
 </head>
 
 <body>
@@ -79,6 +80,7 @@
                 <section class="playlists">
                     <h2>推荐歌单</h2>
                     <ol class="song">
+                        
                         <li>
                             <div class="cover">
                                 <img src="//i.loli.net/2017/08/23/599d8219b7091.jpg" alt="log">
@@ -126,6 +128,7 @@
                 <section class="songs">
                     <h2>最新音乐</h2>
                     <ol class="list" id="songs"> 
+                        <div id="songs-loading" class="ball-clip-rotate"><div></div></div>
                     </ol>
                 </section>
                 <section class="art">
@@ -216,19 +219,23 @@
             appKey: APP_KEY
         });
 
+
+
         var $olSongs = $('ol#songs')
         var query = new AV.Query('Song');
         query.find().then(function(results){
+            $('#songs-loading').remove()
             for(var i = 0;i<results.length;i++){
                 var song = results[i].attributes
                 var li = `
                         <li>
                             <h3>${song.name}</h3>
                             <p><i class="iconfont"></i>${song.singer}</p>
-                            <a href="#"></a>
+                            <a href="${song.url}"></a>
                         </li>
                 `
                 $olSongs.append(li)
+                
             }
         },function(error){
             alert('获取歌曲曲失败')

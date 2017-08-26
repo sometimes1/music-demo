@@ -154,6 +154,7 @@ section.topbar > a::after{
     color:white;
 }
 
+
 /*最新音乐*/
 
 .songs{
@@ -176,7 +177,14 @@ section.topbar > a::after{
     height: 16px;
     background-color: #d33a31;
 }
-
+.songs > .list > .ball-clip-rotate{
+    position: relative;
+    left: 50%;
+}
+.songs > .list > .ball-clip-rotate > div{
+    border:2px solid #D33A30;
+    border-bottom-color: transparent;
+}
 .songs > .list > li{
     padding:6px  0;
     margin-left:10px;
