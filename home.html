@@ -192,7 +192,15 @@
                     </div>
                 </section>
             </li>
-            <li class="page-2">2</li>
+            <li class="page-2">
+                <section class="HotSong">
+                </section>
+                <section class="HotSongList">
+                    <ol class="songs">
+                        <div id="songs-loading" class="ball-clip-rotate"><div></div></div>
+                    </ol>
+                </section>
+            </li>
             <li class="page-3">3</li>
         </ol>
     </div>
@@ -202,6 +210,7 @@
     <script src="./vendors/jquery.min.js"></script>
     <script src="./vendors/av-min.js"></script>
     <script>
+        /*tabs组件*/
         $('.tabs').on('click', 'li', function (e) {
             var $li = $(e.currentTarget)
             var index = $li.index()
@@ -231,7 +240,7 @@
                         <li>
                             <h3>${song.name}</h3>
                             <p><i class="iconfont"></i>${song.singer}</p>
-                            <a href="${song.url}"></a>
+                            <a href="#"></a>
                         </li>
                 `
                 $olSongs.append(li)

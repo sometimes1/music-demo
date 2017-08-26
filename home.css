@@ -15,7 +15,7 @@ section.topbar{
     width:100%;
     padding:17px 10px;
     background:#D43c33;
-    z-index:99;
+    z-index:1;
     /*padding:5.3125vw 3.125vw*/
 }
 section.topbar .logo >svg{
@@ -103,8 +103,8 @@ section.topbar > a::after{
 }
 
 .playlists{
-    margin-top:101px;
-    padding-top:20px;
+    margin-top:104px;
+    padding-top:17px;
 }
 .playlists > h2{
     font-size:17px;
@@ -116,7 +116,7 @@ section.topbar > a::after{
     content: "";
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 55%;
     margin-top: -9px;
     width: 2px;
     height: 16px;
@@ -275,4 +275,12 @@ section.topbar > a::after{
     font-size: 12px;
     line-height: 16px;
     transform: scale(.75);
+}
+
+
+/*page2*/
+
+.page2,page3{
+    margin-top:101px;
+    padding-top:20px;
 }
