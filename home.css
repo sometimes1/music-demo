@@ -190,7 +190,7 @@ section.topbar > a::after{
     line-height: 24px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-right:30px;
+    margin-right:50px;
 }
 .songs > .list > li > h3 > span{
     margin-left:4px;
@@ -207,7 +207,7 @@ section.topbar > a::after{
     font-size:12px;
     color:#888;
     line-height: 18px;
-    margin-right:30px;
+    margin-right:50px;
 }
 .songs > .list > li > p > i{
     display:inline-block;

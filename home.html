@@ -125,57 +125,7 @@
                 </section>
                 <section class="songs">
                     <h2>最新音乐</h2>
-                    <ol class="list">
-                        <li>
-                            <h3>十冷进行曲 <span>(电影《十万个冷笑话2》战斗版推广曲)</span></h3>
-                            <p><i class="iconfont"></i>戴荃 - 十冷进行曲</p>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <h3>Fetish <span class="black">(Galantis Remix)</span></h3>
-                            <p><i class="iconfont"></i>Selena Gomez / Galantis / Gucci Mane</p>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <h3>Paradise</h3>
-                            <p><i class="iconfont"></i>F.T Island</p>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <h3>未单身</h3>
-                            <p><i class="iconfont"></i>A-Lin - 未单身</p>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <h3>Walk On Water</h3>
-                            <p><i class="iconfont"></i>30 Seconds to Mars - Walk On Water</p>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <h3>나는 왜</h3>
-                            <p><i class="iconfont"></i>O.O.O - GARDEN</p>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <h3>雨のち感情論</h3>
-                            <p><i class="iconfont"></i>和楽器バンド - 雨のち感情論</p>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <h3>TROUBLE</h3>
-                            <p><i class="iconfont"></i>加治ひとみ - TROUBLE</p>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <h3>Deal with the devil <span>(TV动画《狂赌之渊》片头曲 / TVアニメ「賭ケグルイ」OPテーマ)</span></h3>
-                            <p><i class="iconfont"></i>Tia - Deal with the devil</p>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <h3>如果我是一首歌 <span>(If I were a song)</span></h3>
-                            <p><i class="iconfont"></i>岑宁儿 - 如果我是一首歌</p>
-                            <a href="#"></a>
-                        </li>
+                    <ol class="list" id="songs"> 
                     </ol>
                 </section>
                 <section class="art">
@@ -247,6 +197,7 @@
 
 
     <script src="./vendors/jquery.min.js"></script>
+    <script src="./vendors/av-min.js"></script>
     <script>
         $('.tabs').on('click', 'li', function (e) {
             var $li = $(e.currentTarget)
@@ -255,6 +206,50 @@
             $('.tab-content').children().eq(index)
                 .addClass('active').siblings().removeClass('active')
         })
+    </script>
+    <script>
+        var APP_ID = 'uW0JtDIjEGpdpM5kLIYhVHwD-gzGzoHsz';
+        var APP_KEY = 'xtg4N3ML7MvjyrzmAlJaXJpJ';
+
+        AV.init({
+            appId: APP_ID,
+            appKey: APP_KEY
+        });
+
+        var $olSongs = $('ol#songs')
+        var query = new AV.Query('Song');
+        query.find().then(function(results){
+            for(var i = 0;i<results.length;i++){
+                var song = results[i].attributes
+                var li = `
+                        <li>
+                            <h3>${song.name}</h3>
+                            <p><i class="iconfont"></i>${song.singer}</p>
+                            <a href="#"></a>
+                        </li>
+                `
+                $olSongs.append(li)
+            }
+        },function(error){
+            alert('获取歌曲曲失败')
+        })
+
+
+
+
+
+
+
+        /*歌曲上传
+        var SongObject = AV.Object.extend('Song');//选择表名
+        var songObject = new SongObject();//生成一条数据
+        songObject.save({
+            name:'Love The Way You Lie',//数据里面的内容
+            singer:'Eminem',
+            url:'//ovapiv064.bkt.clouddn.com/Love%20The%20Way%20You%20Lie'
+        }).then(function(object) {
+            alert('保存成功');
+        })*/
     </script>
 </body>
 
