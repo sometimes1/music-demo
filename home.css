@@ -387,3 +387,142 @@ section.topbar > a::after{
     font-size:12px;
     padding-left:1px;
 }
+/*搜索*/
+.seek{
+    margin-top:104px;
+}
+.seek > .seek-top{
+    padding:15px 10px;
+    border-bottom:1px solid #e8e8e8;
+}
+.seek > .seek-top > .inputcover{
+    position:relative;
+    width:100%;
+    height: 30px;
+    padding:0 30px;
+    background: #ebecec;
+    border-radius:30px;
+}
+.seek > .seek-top > .inputcover > i{
+    position:absolute;
+    left:0;
+    top:9px;
+    margin:0 8px;
+    vertical-align:middle;
+    width:13px;
+    height:13px;
+    color:rgb(201,201,201);
+}
+.seek > .seek-top > .inputcover > input{
+    width:100%;
+    height:30px;
+    line-height:18px;
+    background: transparent;
+    font-size:14px;
+    color:#333;
+    user-select: text;
+    cursor: auto;
+}
+.seek > .seek-top > .inputcover > .holder{
+    position: absolute;
+    left:30px;
+    top:5px;
+    font-size:14px;
+    color:#c9c9c9;
+    background:transparent;
+    pointer-events:none;
+    cursor:default;
+}
+.seek > .seek-top > .inputcover > .close{
+    position: absolute;
+    right:0;
+    top:0;
+    width:30px;
+    height:30px;
+    line-height:28px;
+    text-align:center;
+}
+.seek > .seek-top > .inputcover > .close > i{
+    display:none;
+    vertical-align:middle;
+    width:14px;
+    height:14px;
+    color:#bcbdbd;
+}
+/*热门搜索*/
+.seek > .hot-seek{
+    padding:15px 10px 0;
+    margin-top:-1px;
+}
+.seek > .hot-seek > h3{
+    font-size:12px;
+    line-height:12px;
+    color:#666;
+}
+.seek > .hot-seek > ul{
+    margin:10px 0 7px;
+}
+.seek > .hot-seek > ul > li{
+    display:inline-block;
+    height:32px;
+    margin-right: 4px;
+    margin-bottom: 8px;
+    padding: 0 14px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #333;
+    position:relative;
+}
+.seek > .hot-seek > ul > li:after{
+    content:'';
+    width: 200%;
+    height: 200%;
+    border-radius:32px;
+    transform:scale(.5);
+    border:1px solid #d3d4da;
+    position:absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+}
+/*热歌列表*/
+.hotlist > ul > li{
+    display:flex;
+    align-items:center;
+    height:45px;
+}
+.hotlist > ul > li > i{
+    margin:0 10px;
+    vertical-align:middle;
+    width:15px;
+    height:15px;
+    color:#c9caca;
+}
+.hotlist > ul > li > div{
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1;
+    width: 1%;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 45px;
+    position: relative;
+    border-bottom:1px solid #e8e8e8;
+}
+.hotlist > ul > li > div > span{
+    margin-right:10px;
+    font-size:14px;
+}
+.hotlist > ul > li > div >.close{
+    width: 32px;
+    height: 32px;
+    position:absolute;
+    right:7px;
+    top:12px;
+}
+.hotlist > ul > li > div >.close > i{
+    margin-left:2px;
+    vertical-align: middle;
+    font-size:25px;
+    color:#999899;
+}
