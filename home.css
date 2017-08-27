@@ -423,15 +423,9 @@ section.topbar > a::after{
     user-select: text;
     cursor: auto;
 }
-.seek > .seek-top > .inputcover > .holder{
-    position: absolute;
-    left:30px;
-    top:5px;
+.seek > .seek-top > .inputcover > ::-webkit-input-placeholder{
     font-size:14px;
     color:#c9c9c9;
-    background:transparent;
-    pointer-events:none;
-    cursor:default;
 }
 .seek > .seek-top > .inputcover > .close{
     position: absolute;
