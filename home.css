@@ -64,11 +64,6 @@ section.topbar > a::after{
     z-index:1;
     background:#fff;
 }
-/*border::after{
-    width: 200%;
-    height: 200%;
-    transform: scale(.5);
-}*/
 .tabs >li {
     width:33.333333%;
     color: #333;
@@ -98,7 +93,7 @@ section.topbar > a::after{
 .tab-content >li {
     display:none;
 }
-.tab-content > li.active{
+.tab-content > .active{
     display:block;
 }
 
@@ -280,7 +275,115 @@ section.topbar > a::after{
 
 /*page2*/
 
-.page2,page3{
-    margin-top:101px;
-    padding-top:20px;
+.hot-song{
+    margin-top:104px;
+}
+.hot-song > .background{
+    position: relative;
+    padding-top: 38.9%;
+    background-size: contain;
+    background-image: url(//i.loli.net/2017/08/27/59a2ba0edd1dc.jpg);
+}
+.hot-song > .background > .hot-top{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-left:20px;
+    background:rgba(0,0,0,.2);
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+.hot-song > .background > .hot-top > .logo{
+    width:142px;
+    height:67px;
+    background:transparent url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat -24px -30px;
+    background-size: 166px 97px;
+}
+.hot-song > .background > .hot-top > .hot-time{
+    margin-top:10px;
+    color:hsla(0,0%,100%,.8);
+    font-size:12px;
+    transform:scale(.91);
+    transform-origin:left top;
+}
+
+/*歌单列表*/
+
+.hot-list > .list{
+    margin-left:10px;
+}
+.hot-list > .list > li{
+    margin-left:30px;
+    position:relative;
+    padding:6px 0;
+    left:-2px;
+    border-bottom:1px solid #e8e8e8;
+}
+.hot-list > .list > li > h3{
+    font-size:17px;
+    overflow: hidden;
+    line-height: 25px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right:50px;
+}
+.hot-list >.list > li > p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:12px;
+    color:#888;
+    line-height: 17px;
+    margin-right:50px;
+    
+}
+.hot-list >.list > li > p > i{
+    display:inline-block;
+    width: 12px;
+    height: 8px;
+    margin-right: 4px;
+    background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat;
+    background-size: 166px 97px;           
+}
+.hot-list >.list > li > a{
+    width: 22px;
+    height: 22px;
+    background-position: -24px 0;
+    background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat -24px 0;
+    background-size: 166px 97px;
+    position: absolute;
+    right:8px;
+    bottom:50%;
+    transform: translateY(50%);         
+}
+.hot-list > .list > li > div{
+    position: absolute;
+    top:34%;
+    left:-28px;
+    font-size:17px;
+    width:25px;
+    color:#999;
+}
+.hot-list > .list > li > div.color{
+    color:#d33a31;
+}
+
+.hot-list > .more{
+    height:55px;
+    line-height:55px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.hot-list > .more > span{
+    color:#999;
+    font-size:14px;
+}
+.hot-list > .more > span > i{
+    color:rgba(232,232,232,.9);
+    font-size:12px;
+    padding-left:1px;
 }

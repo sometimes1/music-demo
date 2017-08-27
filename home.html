@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>网易云音乐</title>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_359189_togl1cpw7pue4s4i.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_359189_25rihgnobrgxecdi.css">
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./home.css">
     <link rel="stylesheet" href="./vendors/loaders.min.css">
@@ -76,11 +76,11 @@
             </ol>
         </section>
         <ol class="tab-content">
-            <li class="page-1 active">
+            <li class="page-1">
                 <section class="playlists">
                     <h2>推荐歌单</h2>
                     <ol class="song">
-                        
+
                         <li>
                             <div class="cover">
                                 <img src="//i.loli.net/2017/08/23/599d8219b7091.jpg" alt="log">
@@ -127,8 +127,10 @@
                 </section>
                 <section class="songs">
                     <h2>最新音乐</h2>
-                    <ol class="list" id="songs"> 
-                        <div id="songs-loading" class="ball-clip-rotate"><div></div></div>
+                    <ol class="list" id="songs">
+                        <div id="songs-loading" class="ball-clip-rotate">
+                            <div></div>
+                        </div>
                     </ol>
                 </section>
                 <section class="art">
@@ -192,13 +194,90 @@
                     </div>
                 </section>
             </li>
-            <li class="page-2">
-                <section class="HotSong">
-                </section>
-                <section class="HotSongList">
-                    <ol class="songs">
-                        <div id="songs-loading" class="ball-clip-rotate"><div></div></div>
-                    </ol>
+            <li class="page-2 active">
+                <section class="hot-song">
+                    <div class="background">
+                        <div class="hot-top">
+                            <div class="logo"></div>
+                            <div class="hot-time">
+                                更新日期：08月24日
+                            </div>
+                        </div>
+                    </div>
+                    <section class="hot-list">
+                        <ol id="song"class="list">
+                            <li>
+                                <div class="color">01</div>
+                                <h3>追光者</h3>
+                                <p><i></i></p>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <div class="color">02</div>
+                                <h3>我要你</h3>
+                                <p><i></i></p>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <div class="color">03</div>
+                                <h3>我要你</h3>
+                                <p><i></i></p>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <div>04</div>
+                                <h3>我要你</h3>
+                                <p><i></i></p>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <div>05</div>
+                                <h3>我要你</h3>
+                                <p><i></i></p>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <div>06</div>
+                                <h3>我要你</h3>
+                                <p><i></i></p>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <div>07</div>
+                                <h3>我要你</h3>
+                                <p><i></i></p>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <div>08</div>
+                                <h3>我要你</h3>
+                                <p><i></i></p>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <div>09</div>
+                                <h3>我要你</h3>
+                                <p><i></i></p>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <div>10</div>
+                                <h3>我要你</h3>
+                                <p><i></i></p>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <div>11</div>
+                                <h3>我要你</h3>
+                                <p><i></i></p>
+                                <a href="#"></a>
+                            </li>
+
+                        </ol>
+                        <section class="more">
+                            <span>查看完整榜单<i class="iconfont icon-more"></i></span>
+                        </section>
+                    </section>   
                 </section>
             </li>
             <li class="page-3">3</li>
@@ -232,21 +311,21 @@
 
         var $olSongs = $('ol#songs')
         var query = new AV.Query('Song');
-        query.find().then(function(results){
+        query.find().then(function (results) {
             $('#songs-loading').remove()
-            for(var i = 0;i<results.length;i++){
+            for (var i = 0; i < results.length; i++) {
                 var song = results[i].attributes
                 var li = `
                         <li>
                             <h3>${song.name}</h3>
-                            <p><i class="iconfont"></i>${song.singer}</p>
+                            <p><i></i>${song.singer}</p>
                             <a href="${song.url}"></a>
                         </li>
                 `
                 $olSongs.append(li)
-                
+
             }
-        },function(error){
+        }, function (error) {
             alert('获取歌曲曲失败')
         })
 
