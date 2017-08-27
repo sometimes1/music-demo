@@ -70,6 +70,7 @@ section.topbar > a::after{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor:pointer;
 }
 .tabs > li > .text{
     padding:10px 5px;
@@ -466,6 +467,7 @@ section.topbar > a::after{
     line-height: 32px;
     color: #333;
     position:relative;
+    cursor:pointer;
 }
 .seek > .hot-seek > ul > li:after{
     content:'';
@@ -506,6 +508,7 @@ section.topbar > a::after{
 .hotlist > ul > li > div > span{
     margin-right:10px;
     font-size:14px;
+    cursor:pointer;
 }
 .hotlist > ul > li > div >.close{
     width: 32px;

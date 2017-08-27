@@ -8,3 +8,6 @@ input{
     outline: 0;
     border:none;
 }
+a{
+    cursor:pointer;
+}
