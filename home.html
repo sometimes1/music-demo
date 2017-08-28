@@ -309,7 +309,7 @@
                             <li>鹿晗</li>
                         </ul>
                     </section>
-                    <section class="hotlist">
+                    <!--section class="hotlist">
                         <ul>
                             <li>
                                 <i class="iconfont icon-shijian"></i>
@@ -402,7 +402,7 @@
                                 </div>
                             </li>
                         </ul>
-                    </section>
+                    </section-->
                 </div>
             </li>
         </ol>
@@ -431,7 +431,7 @@
             appKey: APP_KEY
         });
 
-/*歌曲应用*/
+        /*歌曲应用*/
 
         var $olSongs = $('ol#songs')
         var query = new AV.Query('Song');
@@ -453,70 +453,69 @@
             alert('获取歌曲曲失败')
         })
 
-/*搜索结果*/
+        /*搜索结果*/
 
-$('input#search').on('input', function(e){
-    var $input = $(e.currentTarget)
-    var value = $input.val()
-    var query = new AV.Query('Song');
-    $('.hot-seek').hide()
-    $('.hotlist').hide()
-    $('.close').addClass('active')
-    $('.search-content').html(`<h3>搜索“${value}”</h3>`).show()
-    query.contains('name', value);
-    query.find().then(function(results){
-        $('#searchResult').empty()
-        for(var i=0; i<results.length; i++){
-          var song = results[i].attributes
-          var li = `
+        $('input#search').on('input', function (e) {
+            var $input = $(e.currentTarget)
+            var value = $input.val()
+            var query = new AV.Query('Song');
+            $('.hot-seek').hide()
+            $('.close').addClass('active')
+            $('.search-content').html(`<h3>搜索“${value}”</h3>`).show()
+            query.contains('name', value);
+            query.find().then(function (results) {
+                $('#searchResult').empty()
+                for (var i = 0; i < results.length; i++) {
+                    var song = results[i].attributes
+                    var li = `
           <li>
                 <i class="iconfont icon-weibiaoti-"></i>
-                ${song.name}
+                <a>${song.name}</a>
           </li>
           `
-          $('#searchResult').append(li)
+                    $('#searchResult').append(li)
+                }
+                if (value === '') {
+                    return (close())
+                }
+            })
+
+        })
+
+        /*包装清空按钮*/
+        var close = function () {
+            $('#search').val('')
+            $('.close').removeClass('active')
+            $('#searchResult').empty()
+            $('.hot-seek').show()
+            $('.search-content').hide()
         }
-        if(value === ''){
-        return(close())
-    }
-    })
-    
-  })
-
-/*包装清空按钮*/
-  var close = function(){
-    $('#search').val('')
-    $('.close').removeClass('active')
-    $('#searchResult').empty()
-    $('.hot-seek').show()
-    $('.hotlist').show()
-    $('.search-content').hide()
-  }
-/*清空按钮*/
-$('.close').on('click',function(){
-    return(close())
-})
+        /*清空按钮*/
+        $('.close').on('click', function () {
+            return (close())
+        })
 
 
-/*热门搜索*/
-$('.hot-seek > ul').on('click','li',function(){
-        $('#search').val($(this).text())
-        hot()
-})
+        /*热门搜索*/
+        $('.hot-seek > ul').on('click', 'li', function () {
+            $('#search').val($(this).text())
+            hot()
+        })
 
-/*热门歌曲列表*/
+        /*热门歌曲列表*/
 
-$('.hotlist > ul').on('click','li>div>span',function(){
-        $('#search').val($(this).text())
-        hot()
-})
-var hot = function(){
-    $('.hotlist').hide ()
-    $('.hot-seek').hide()
-    $('.close').addClass('active')
-    $('#searchResults').empty()
-    $('.search-content').html("<h3>搜索"+ $('#search').val() +"</h3>").show()
-}
+        $('.hotlist > ul').on('click', 'li>div>span', function () {
+            $('#search').val($(this).text())
+            hot()
+        })
+        var hot = function () {
+            $('.hotlist').hide()
+            $('.hot-seek').hide()
+            $('.close').addClass('active')
+            $('#searchResults').empty()
+            var value = $('#search').val()
+            $('.search-content').html(`<h3>搜索“${value}”</h3>`).show()
+        }
 
 
         /*歌曲上传
