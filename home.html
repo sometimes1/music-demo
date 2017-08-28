@@ -76,7 +76,7 @@
             </ol>
         </section>
         <ol class="tab-content">
-            <li class="page-1 active">
+            <li class="page-1">
                 <section class="playlists">
                     <h2>推荐歌单</h2>
                     <ol class="song">
@@ -280,17 +280,20 @@
                     </section>
                 </section>
             </li>
-            <li class="page-3">
+            <li class="page-3 active">
                 <div class="seek">
                     <form class="seek-top">
                         <div class="inputcover">
                             <i class="iconfont icon-weibiaoti-"></i>
-                            <input type="search" placeholder="搜索歌曲、歌手、专辑">
+                            <input id="search" type="text" placeholder="搜索歌曲、歌手、专辑">
                             <div class="close">
-                                <i class="iconfont icon-closecircled"></i>
+                                <i class="iconfont icon-closecircled active"></i>
                             </div>
                         </div>
                     </form>
+                    <div class="search-content">
+                    </div>
+                    <div id="searchResult"></div>
                     <section class="hot-seek">
                         <h3>热门搜索</h3>
                         <ul>
@@ -312,7 +315,7 @@
                                 <i class="iconfont icon-shijian"></i>
                                 <div>
                                     <span>Taylor Swift</span>
-                                    <div class="close">
+                                    <div class="close-1">
                                         <i class="iconfont icon-close"></i>
                                     </div>
                                 </div>
@@ -321,7 +324,7 @@
                                 <i class="iconfont icon-shijian"></i>
                                 <div>
                                     <span>love the way you lie</span>
-                                    <div class="close">
+                                    <div class="close-1">
                                         <i class="iconfont icon-close"></i>
                                     </div>
                                 </div>
@@ -330,7 +333,7 @@
                                 <i class="iconfont icon-shijian"></i>
                                 <div>
                                     <span>love you like i do</span>
-                                    <div class="close">
+                                    <div class="close-1">
                                         <i class="iconfont icon-close"></i>
                                     </div>
                                 </div>
@@ -339,7 +342,7 @@
                                 <i class="iconfont icon-shijian"></i>
                                 <div>
                                     <span>need you now</span>
-                                    <div class="close">
+                                    <div class="close-1">
                                         <i class="iconfont icon-close"></i>
                                     </div>
                                 </div>
@@ -348,7 +351,7 @@
                                 <i class="iconfont icon-shijian"></i>
                                 <div>
                                     <span>take a bow</span>
-                                    <div class="close">
+                                    <div class="close-1">
                                         <i class="iconfont icon-close"></i>
                                     </div>
                                 </div>
@@ -357,7 +360,7 @@
                                 <i class="iconfont icon-shijian"></i>
                                 <div>
                                     <span>long lost pen pal</span>
-                                    <div class="close">
+                                    <div class="close-1">
                                         <i class="iconfont icon-close"></i>
                                     </div>
                                 </div>
@@ -366,7 +369,7 @@
                                 <i class="iconfont icon-shijian"></i>
                                 <div>
                                     <span>see you again</span>
-                                    <div class="close">
+                                    <div class="close-1">
                                         <i class="iconfont icon-close"></i>
                                     </div>
                                 </div>
@@ -375,7 +378,7 @@
                                 <i class="iconfont icon-shijian"></i>
                                 <div>
                                     <span>five hundred miles</span>
-                                    <div class="close">
+                                    <div class="close-1">
                                         <i class="iconfont icon-close"></i>
                                     </div>
                                 </div>
@@ -384,7 +387,7 @@
                                 <i class="iconfont icon-shijian"></i>
                                 <div>
                                     <span>i am you</span>
-                                    <div class="close">
+                                    <div class="close-1">
                                         <i class="iconfont icon-close"></i>
                                     </div>
                                 </div>
@@ -393,7 +396,7 @@
                                 <i class="iconfont icon-shijian"></i>
                                 <div>
                                     <span>Turnin</span>
-                                    <div class="close">
+                                    <div class="close-1">
                                         <i class="iconfont icon-close"></i>
                                     </div>
                                 </div>
@@ -428,7 +431,7 @@
             appKey: APP_KEY
         });
 
-
+/*歌曲应用*/
 
         var $olSongs = $('ol#songs')
         var query = new AV.Query('Song');
@@ -450,10 +453,70 @@
             alert('获取歌曲曲失败')
         })
 
+/*搜索结果*/
+
+$('input#search').on('input', function(e){
+    var $input = $(e.currentTarget)
+    var value = $input.val()
+    var query = new AV.Query('Song');
+    $('.hot-seek').hide()
+    $('.hotlist').hide()
+    $('.close').addClass('active')
+    $('.search-content').html(`<h3>搜索“${value}”</h3>`).show()
+    query.contains('name', value);
+    query.find().then(function(results){
+        $('#searchResult').empty()
+        for(var i=0; i<results.length; i++){
+          var song = results[i].attributes
+          var li = `
+          <li>
+                <i class="iconfont icon-weibiaoti-"></i>
+                ${song.name}
+          </li>
+          `
+          $('#searchResult').append(li)
+        }
+        if(value === ''){
+        return(close())
+    }
+    })
+    
+  })
+
+/*包装清空按钮*/
+  var close = function(){
+    $('#search').val('')
+    $('.close').removeClass('active')
+    $('#searchResult').empty()
+    $('.hot-seek').show()
+    $('.hotlist').show()
+    $('.search-content').hide()
+  }
+/*清空按钮*/
+$('.close').on('click',function(){
+    return(close())
+})
 
 
+/*热门搜索*/
+$('.hot-seek > ul').on('click','li',function(){
+        $('#search').val($(this).text())
+        hot()
+})
 
+/*热门歌曲列表*/
 
+$('.hotlist > ul').on('click','li>div>span',function(){
+        $('#search').val($(this).text())
+        hot()
+})
+var hot = function(){
+    $('.hotlist').hide ()
+    $('.hot-seek').hide()
+    $('.close').addClass('active')
+    $('#searchResults').empty()
+    $('.search-content').html("<h3>搜索"+ $('#search').val() +"</h3>").show()
+}
 
 
         /*歌曲上传

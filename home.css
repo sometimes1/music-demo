@@ -429,6 +429,11 @@ section.topbar > a::after{
     color:#c9c9c9;
 }
 .seek > .seek-top > .inputcover > .close{
+    display:none;
+    
+}
+.seek > .seek-top > .inputcover > .active{
+    display:block;
     position: absolute;
     right:0;
     top:0;
@@ -437,13 +442,13 @@ section.topbar > a::after{
     line-height:28px;
     text-align:center;
 }
-.seek > .seek-top > .inputcover > .close > i{
-    display:none;
+.icon-closecircled:before{
     vertical-align:middle;
     width:14px;
     height:14px;
     color:#bcbdbd;
 }
+
 /*热门搜索*/
 .seek > .hot-seek{
     padding:15px 10px 0;
@@ -510,16 +515,46 @@ section.topbar > a::after{
     font-size:14px;
     cursor:pointer;
 }
-.hotlist > ul > li > div >.close{
+.hotlist > ul > li > div >.close-1{
     width: 32px;
     height: 32px;
     position:absolute;
     right:7px;
     top:12px;
 }
-.hotlist > ul > li > div >.close > i{
+.hotlist > ul > li > div >.close-1 > i{
     margin-left:2px;
     vertical-align: middle;
     font-size:25px;
     color:#999899;
+}
+
+
+
+/*搜索结果*/
+#searchResult > li{
+    display:flex;
+    align-items:center;
+    height:45px;
+}
+#searchResult > li > i{
+    margin:0 8px;
+    vertical-align:middle;
+    width:13px;
+    height:13px;
+    color:rgb(201,201,201);
+}
+
+/*搜索xxx*/
+.seek > .search-content{
+    border-bottom:1px solid #e8e8e8;
+}
+.search-content > h3{
+    position: relative;
+    height: 50px;
+    margin-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    line-height: 50px;
+    color: #507daf;
 }
