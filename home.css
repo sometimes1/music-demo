@@ -56,13 +56,24 @@ section.topbar > a::after{
 /*tabs组件 */
 .tabs{
     display:flex;
-    border-bottom:1px solid #e8e8e8;
     position:fixed;
     width:100%;
     top: 64px;
     left: 0;
     z-index:1;
     background:#fff;
+}
+.u-tabs::after{
+    content:'';
+    width:200%;
+    height: 200%;
+    position: absolute;
+    top:0;
+    left:0;
+    border-bottom:1px solid #ccc;
+    transform:scale(.5);
+    transform-origin:top left;
+    z-index:-1;
 }
 .tabs >li {
     width:33.333333%;

@@ -6,6 +6,8 @@ $('.tabs').on('click', 'li', function (e) {
     $li.addClass('active').siblings().removeClass('active')
     $('.tab-content').children().eq(index)
         .addClass('active').siblings().removeClass('active')
+        
+        close()
 })
 
 
