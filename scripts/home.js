@@ -11,7 +11,7 @@ $('.tabs').on('click', 'li', function (e) {
 })
 
 
-//歌曲应用
+//最新音乐歌曲应用
 
 var $olSongs = $('ol#songs')
 var query = new AV.Query('Song');
@@ -19,17 +19,47 @@ query.find().then(function (results) {
     $('#songs-loading').remove()
     for (var i = 0; i < results.length; i++) {
         var song = results[i].attributes
-        var li = `
-        <li>
-        <a href="${song.url}">
-            <h3>${song.name}</h3>
-            <p><i></i>${song.singer}</p>
-            <div></div>
-        </a>
-        </li>
-                `
-        $olSongs.append(li)
+        if(song.hot===true){
+            var li = `
+            <li>
+            <a href="${song.url}">
+                <h3>${song.name}</h3>
+                <p><i></i>${song.singer}</p>
+                <div></div>
+            </a>
+            </li>
+                    `
+                  
+            $olSongs.append(li)
+        }
+        
+    }
+}, function (error) {
+    alert('获取歌曲曲失败')
+})
 
+/*热歌榜*/ 
+
+var $olSong = $('ol#song')
+var query = new AV.Query('Song');
+query.find().then(function (results) {
+    $('#song-loading').remove()
+    for (var i = 0; i < results.length; i++) {
+        var song = results[i].attributes
+        if(song.hot===false){
+            var li = `
+            <li>
+            <a href="${song.url}">
+            <div class="number">${'0'+(i-9)}</div>
+                <h3>${song.name}</h3>
+                <p><i></i>${song.singer}</p>
+                <div class="button"></div>
+            </a>
+            </li>
+                    `
+            $olSong.append(li)
+        }
+        
     }
 }, function (error) {
     alert('获取歌曲曲失败')
@@ -165,15 +195,18 @@ var hot = function () {
     $('.search-content').html(`<h3>搜索“${value}”</h3>`).show()
 }
 
+
+
+
  //
 
-        /*歌曲上传
-        var SongObject = AV.Object.extend('Song');//选择表名
+        //歌曲上传
+        /*var SongObject = AV.Object.extend('Song');//选择表名
         var songObject = new SongObject();//生成一条数据
         songObject.save({
-            name:'Love The Way You Lie',//数据里面的内容
-            singer:'Eminem',
-            url:'//ovapiv064.bkt.clouddn.com/Love%20The%20Way%20You%20Lie'
+            name:'遗憾',//数据里面的内容
+            singer:'方炯镔',
+            url:'http://ovapiv064.bkt.clouddn.com/%E9%81%97%E6%86%BE'
         }).then(function(object) {
             alert('保存成功');
         })*/

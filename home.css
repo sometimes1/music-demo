@@ -326,7 +326,8 @@ section.topbar > a::after{
     left:-2px;
     border-bottom:1px solid #e8e8e8;
 }
-.hot-list > .list > li > h3{
+
+.hot-list > .list > li > a > h3{
     font-size:17px;
     overflow: hidden;
     line-height: 25px;
@@ -334,7 +335,7 @@ section.topbar > a::after{
     white-space: nowrap;
     margin-right:50px;
 }
-.hot-list >.list > li > p{
+.hot-list >.list > li > a > p{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -344,7 +345,7 @@ section.topbar > a::after{
     margin-right:50px;
     
 }
-.hot-list >.list > li > p > i{
+.hot-list >.list > li > a > p > i{
     display:inline-block;
     width: 12px;
     height: 8px;
@@ -352,7 +353,7 @@ section.topbar > a::after{
     background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat;
     background-size: 166px 97px;           
 }
-.hot-list >.list > li > a{
+.hot-list >.list > li > a > .button{
     width: 22px;
     height: 22px;
     background-position: -24px 0;
@@ -363,7 +364,7 @@ section.topbar > a::after{
     bottom:50%;
     transform: translateY(50%);         
 }
-.hot-list > .list > li > div{
+.hot-list > .list > li> a > .number{
     position: absolute;
     top:34%;
     left:-28px;
@@ -371,7 +372,7 @@ section.topbar > a::after{
     width:25px;
     color:#999;
 }
-.hot-list > .list > li > div.color{
+.hot-list > .list > li > a > .number:first-child{
     color:#d33a31;
 }
 
