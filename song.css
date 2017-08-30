@@ -1,0 +1,155 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+*::before,*::after{
+    box-sizing:border-box;
+}
+a{
+    text-decoration:none;
+}
+
+.page{
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+.page::before{
+    content:'';
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    filter:brightness(.6);
+    z-index:-1;
+    background:transparent url(//i.loli.net/2017/08/30/59a662bcb30e6.jpg) no-repeat center;
+    background-size:auto 100%;
+    transform: scale(1.5);
+}
+
+/*光盘指针*/
+.pointer{
+    text-align:center;
+    width:100%;
+}
+.pointer > img{
+    width: 96px;
+    height: 137px;
+    transform:translateX(35%); 
+}
+
+
+/*光盘*/
+.disk{
+    position: absolute;
+    top:70px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:-1;
+    text-align: center;
+}
+.disk > .circle{
+    width:296px;
+    height:296px;
+    margin:0 auto;
+    position:relative;
+}
+.disk > .circle::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: transparent url(//i.loli.net/2017/08/30/59a671f4bf65e.png) no-repeat center;
+    background-size:cover;
+}
+.disk > .circle::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: transparent url(//i.loli.net/2017/08/30/59a6720b67fc2.png) no-repeat center;
+    background-size:cover;
+}
+.disk > .circle > img{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:184px;
+    height:184px;
+    margin-top:-92px;
+    margin-left:-92px;
+    border-radius:50%;
+    overflow:hidden;
+    background-size:cover;
+    background:transparent url(//i.loli.net/2017/08/30/59a675c19b668.png) no-repeat;
+}
+.disk > .circle.playing > img,
+.disk > .circle.playing::after{
+    animation:spin 10s linear infinite;
+}
+.disk > .circle.playing.pause > img,
+.disk > .circle.playing.pause::after{
+    animation-play-state:paused;
+}
+@keyframes spin{
+    0%{
+        transform:rotateZ(0deg);
+    }
+    100%{
+        transform:rotateZ(360deg);
+    }
+}
+/*歌词*/
+
+.disk > .lyric{
+    padding:0 35px;
+    margin-top:25px;
+}
+.disk > .lyric > h2{
+    font-size:15px;
+    line-height:1.1;
+    color:#fefefe;
+    white-space: space nowrap;
+    text-overflow:ellipsis;
+    text-align:center;
+    overflow:hidden;
+    padding-bottom:20px;
+}
+.disk > .lyric > p{
+    height:36px;
+    font-size:13px;
+    line-height:1.5;
+    overflow:hidden;
+}
+
+/**/
+.actions{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 29px;
+    text-align:center;
+}
+.actions > a{
+    color:#d43b32;
+    height:42px;
+    font-size:18px;
+    padding: 8px 49px;
+    border-radius: 4px;
+    text-align:center;
+    
+}
+.actions > .a1{
+    border:1px solid #d43b32;
+}
+.actions > .a2{
+    background:#d43b32;
+    color:white;
+    margin-left:7px;
+}
