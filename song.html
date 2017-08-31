@@ -61,10 +61,14 @@
               video.play()
               $('.circle').addClass('playing')
           }
-          /*$('.icon-pause3').on('click',function(){
+          $('.icon-pause3').on('click',function(){
               video.pause()
               $('.circle').removeClass('playing')
-          })*/
+          })
+          $('.icon-play1').on('click',function(){
+              video.play()
+              $('.circle').addClass('playing')
+          })
           var array = []
           var parts = lyric.split('\n')
           parts.forEach(function(string,index){
