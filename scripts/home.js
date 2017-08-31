@@ -24,42 +24,58 @@ query.find().then(function (results) {
             <li>
             <a href="${song.url}">
                 <h3>${song.name}</h3>
-                <p><i></i>${song.singer}</p>
+                <p><i class="sq"></i>${song.singer}</p>
                 <div></div>
             </a>
             </li>
-                    `
-                  
+                    `    
             $olSongs.append(li)
         }
         
     }
+    
 }, function (error) {
     alert('获取歌曲曲失败')
 })
+
+
 
 /*热歌榜*/ 
 
 var $olSong = $('ol#song')
 var query = new AV.Query('Song');
 query.find().then(function (results) {
-    $('#song-loading').remove()
     for (var i = 0; i < results.length; i++) {
         var song = results[i].attributes
-        if(song.hot===false){
-            var li = `
-            <li>
-            <a href="${song.url}">
-            <div class="number">${'0'+(i-9)}</div>
-                <h3>${song.name}</h3>
-                <p><i></i>${song.singer}</p>
-                <div class="button"></div>
-            </a>
-            </li>
-                    `
-            $olSong.append(li)
+        if((i-9)<10){
+            if(song.hot===false){
+                var li = `
+                <li>
+                    <a href="${song.url}">
+                        <div class="number">0${(i-9)}</div>
+                        <h3>${song.name}</h3>
+                        <p><i></i>${song.singer}</p>
+                        <div class="button"></div>
+                    </a>
+                </li>
+                        `
+                $olSong.append(li)
+            }
+        }else{
+            if(song.hot===false){
+                var li = `
+                <li>
+                    <a href="${song.url}">
+                        <div class="number">${i-9}</div>
+                        <h3>${song.name}</h3>
+                        <p><i></i>${song.singer}</p>
+                        <div class="button"></div>
+                    </a>
+                </li>
+                        `
+                $olSong.append(li)
+            }
         }
-        
     }
 }, function (error) {
     alert('获取歌曲曲失败')
@@ -204,9 +220,9 @@ var hot = function () {
         /*var SongObject = AV.Object.extend('Song');//选择表名
         var songObject = new SongObject();//生成一条数据
         songObject.save({
-            name:'遗憾',//数据里面的内容
-            singer:'方炯镔',
-            url:'http://ovapiv064.bkt.clouddn.com/%E9%81%97%E6%86%BE'
+            name:'If You Feel My Love',//数据里面的内容
+            singer:'Blaxy Girls',
+            url:'http://ovapiv064.bkt.clouddn.com/If%20You%20Feel%20My%20Love'
         }).then(function(object) {
             alert('保存成功');
         })*/
