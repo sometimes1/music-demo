@@ -105,7 +105,7 @@ $('input#search').on('input', function (e) {
                     var li = `
                 <li>
                         <i class="iconfont icon-weibiaoti-"></i>
-                        <a href="#}">${song.name}</a>
+                        <a href="./song.html?id=${song.id}">${song.name}</a>
                 </li>
                 `
                     $('#searchResult').append(li)
@@ -178,7 +178,7 @@ $('#searchResult').on('click','li > a',function(e){
             var ol = `
             <ol class="list" id="songs">
             <li>
-            <a href="${song.url}">
+            <a href="./song.html?id=${song.id}">
                 <h3>${song.name}</h3>
                 <p><i></i>${song.singer}</p>
                 <div></div>
