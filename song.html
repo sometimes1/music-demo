@@ -64,10 +64,8 @@
           $('.lyric > .name').append(h2)
           let video = document.createElement('video')
           video.src = url
-          video.oncanplay = function(){
-              video.play()
-              $('.circle').addClass('playing')
-          }
+          video.play()
+          $('.circle').addClass('playing')
           $('.icon-pause3').on('click',function(){
               video.pause()
               $('.circle').removeClass('playing')
