@@ -68,16 +68,17 @@
               video.play()
               $('.circle').addClass('playing')
           }
-          $('.icon-play1').on('click',function(){
-              video.play()
-              $('.circle').addClass('playing')
-              $('.pointer').removeClass('pause')
-          })
           $('.icon-pause3').on('click',function(){
               video.pause()
               $('.circle').removeClass('playing')
               $('.pointer').addClass('pause')
           })
+          $('.icon-play1').on('click',function(){
+              video.play()
+              $('.circle').addClass('playing')
+              $('.pointer').removeClass('pause')
+          })
+          
           
           var array = []
           var parts = lyric.split('\n')
