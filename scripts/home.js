@@ -22,11 +22,11 @@ query.find().then(function (results) {
         if(song.hot===true){
             var li = `
             <li>
-            <a href="${song.url}">
-                <h3>${song.name}</h3>
-                <p><i class="sq"></i>${song.singer}</p>
-                <div></div>
-            </a>
+                <a href="./song.html?id=${song.id}">
+                    <h3>${song.name}</h3>
+                    <p><i class="sq"></i>${song.singer}</p>
+                    <div></div>
+                </a>
             </li>
                     `    
             $olSongs.append(li)
@@ -51,7 +51,7 @@ query.find().then(function (results) {
             if(song.hot===false){
                 var li = `
                 <li>
-                    <a href="${song.url}">
+                    <a href="./song.html?id=${song.id}">
                         <div class="number">0${(i-9)}</div>
                         <h3>${song.name}</h3>
                         <p><i></i>${song.singer}</p>
@@ -65,7 +65,7 @@ query.find().then(function (results) {
             if(song.hot===false){
                 var li = `
                 <li>
-                    <a href="${song.url}">
+                    <a href="./song.html?id=${song.id}">
                         <div class="number">${i-9}</div>
                         <h3>${song.name}</h3>
                         <p><i></i>${song.singer}</p>

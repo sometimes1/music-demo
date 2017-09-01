@@ -12,19 +12,18 @@
 
 <body>
     <div class="page">
+        <div class="background"></div>
         <section class="pointer">
             <img src="//i.loli.net/2017/08/30/59a67191cc8b1.png" alt="指针">
         </section>
         <section class="disk">
             <div class="circle">
-                <img class= "cover" src="//i.loli.net/2017/08/31/59a78ce4b4c78.png" alt="封面图片">
                 <i class="iconfont icon-play1"></i>
                 <i class="iconfont icon-pause3"></i>
             </div>
             <div class="lyric">
-                <h2>If You Feel My Love (Chaow Mix)</h2> 
-                <div class="lines">
-                </div>
+                <div class="name"></div>
+                <div class="lines"></div>
             </div>
         </section>
 
@@ -32,6 +31,7 @@
             <a href="#" class="a1">打 开</a>
             <a href="#" class="a2">下 载</a>
         </section>
+    
     </div>
 
 
@@ -55,20 +55,30 @@
         var query = new AV.Query('Song');
         query.get(id).then(function (song) {
           let {url, lyric} = song.attributes
+          var images = song.attributes.images
+          var singer = song.attributes.singer
+          var img = `<img class="cover" src="${images}" alt="封面图片">`
+          $('.circle').append(img)
+          $('.background').css('background-image',`url(${images})`)
+          var h2 = `<h2>${singer}</h2>`
+          $('.lyric > .name').append(h2)
           let video = document.createElement('video')
           video.src = url
           video.oncanplay = function(){
               video.play()
               $('.circle').addClass('playing')
           }
-          $('.icon-pause3').on('click',function(){
-              video.pause()
-              $('.circle').removeClass('playing')
-          })
           $('.icon-play1').on('click',function(){
               video.play()
               $('.circle').addClass('playing')
+              $('.pointer').removeClass('pause')
           })
+          $('.icon-pause3').on('click',function(){
+              video.pause()
+              $('.circle').removeClass('playing')
+              $('.pointer').addClass('pause')
+          })
+          
           var array = []
           var parts = lyric.split('\n')
           parts.forEach(function(string,index){
@@ -86,6 +96,7 @@
                 let current = video.currentTime
                 for(let i=0;i<array.length;i++){
                 if(i === array.length - 1){
+                    
                 }else if(array[i].time <= current && array[i+1].time > current){
                     console.log(array[i].lyric)
                     break;
