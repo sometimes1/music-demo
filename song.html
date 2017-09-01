@@ -62,18 +62,18 @@
           $('.background').css('background-image',`url(${images})`)
           var h2 = `<h2>${singer}</h2>`
           $('.lyric > .name').append(h2)
-          let video = document.createElement('video')
-          video.src = url
-          $('body').append(video)
-          video.play()
+          let audio = document.createElement('audio')
+          audio.src = url
+          $('body').append(audio)
+          audio.play()
           $('.circle').addClass('playing')
           $('.icon-pause3').on('click',function(){
-              video.pause()
+              audio.pause()
               $('.circle').removeClass('playing')
               $('.pointer').addClass('pause')
           })
           $('.icon-play1').on('click',function(){
-              video.play()
+              audio.play()
               $('.circle').addClass('playing')
               $('.pointer').removeClass('pause')
           })
@@ -93,7 +93,7 @@
               lyric: xxx[1]
             })
             setInterval(function(){
-                let current = video.currentTime
+                let current = audio.currentTime
                 for(let i=0;i<array.length;i++){
                 if(i === array.length - 1){
                     
