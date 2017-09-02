@@ -126,7 +126,7 @@
             $whichLine.addClass('active').prev().removeClass('active')
             var top = $whichLine.offset().top;
             var linesTop = $('.lines').offset().top;
-            var delta = Math.floor(top - linesTop - $('.song-lyric').height()/6)
+            var delta = Math.floor(top - linesTop - $('.song-lyric').height()/4)
             $('.lines').css('transform',`translateY(-${delta}px)`)
                 }
             }

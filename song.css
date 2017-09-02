@@ -77,6 +77,9 @@ a{
     .page >.disk > .lyric{
         height:120px;
     }
+    .page > .disk > .lyric > .song-lyric{
+        height:90px;
+    }
 
 }
 .disk{
@@ -200,7 +203,7 @@ a{
 }
 .disk > .lyric > .song-lyric{
     margin-top:6px;
-    height:90px;
+    height:50px;
     overflow: hidden;
     text-align:center;
 }
@@ -208,11 +211,7 @@ a{
     transition:transform 0.3s;
 }
 .disk > .lyric > .song-lyric > .lines >  p{
-    color:#aeabac;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
+    color:#aeabac; 
     margin-bottom: 5px;
     font-size:12px;
 }
