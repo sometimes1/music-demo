@@ -69,8 +69,8 @@
           audio.src = url
           $('body').append(audio)
           audio.oncanplay = function(){
-            audio.pause()
-          $('.pointer').addClass('pause')
+            audio.play()
+          $('.circle').addClass('playing')
           }
           $('.icon-pause3').on('click',function(){
               audio.pause()
