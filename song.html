@@ -69,15 +69,8 @@
           audio.src = url
           $('body').append(audio)
           audio.oncanplay = function(){
-            audio.play()
-          $('.circle').addClass('playing')
+            $('.pointer').addClass('pause')
           }
-          audio.oncanplay()
-          audio.loop = false
-          audio.addEventListener('ended',function(){
-            $('.circle').removeClass('playing')
-              $('.pointer').addClass('pause')
-          },false)
           $('.icon-pause3').on('click',function(){
               audio.pause()
               $('.circle').removeClass('playing')
@@ -88,7 +81,11 @@
               $('.circle').addClass('playing')
               $('.pointer').removeClass('pause')
           })
-          
+          audio.loop = false
+          audio.addEventListener('ended',function(){
+            $('.circle').removeClass('playing')
+              $('.pointer').addClass('pause')
+          },false)
           
           var array = []
           var parts = lyric.split('\n')
