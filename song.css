@@ -84,6 +84,10 @@ a{
         width:96px;
         height:137px;
     }
+    .page >.actions > a{
+        height:42px;
+        font-size:18px;
+    }
 
 }
 .disk{
@@ -235,12 +239,11 @@ a{
 }
 .actions > a{
     color:#d43b32;
-    height:42px;
-    font-size:18px;
+    height:36px;
     padding: 8px 49px;
     border-radius: 4px;
-    text-align:center;
-    
+    text-align:center;  
+    font-size:15px;
 }
 .actions > .a1{
     border:1px solid #d43b32;
