@@ -164,9 +164,8 @@ a{
     width:300px;
     overflow: hidden;
     color:#fefefe;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;  
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .disk > .lyric > .song-lyric{
     margin-top:6px;
