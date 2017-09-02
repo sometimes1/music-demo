@@ -39,8 +39,8 @@ a{
     z-index:99;
 }
 .pointer img{
-    width: 96px;
-    height: 137px;
+    width: 84px;
+    height: 122px;
     transform-origin: 7% -2%;
     transition: transform 0.6s;
     transform: rotate(0deg);
@@ -79,6 +79,10 @@ a{
     }
     .page > .disk > .lyric > .song-lyric{
         height:90px;
+    }
+    .page > .pointer >img{
+        width:96px;
+        height:137px;
     }
 
 }
