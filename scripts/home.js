@@ -217,12 +217,12 @@ var hot = function () {
  //
 
         //歌曲上传
-        /*var SongObject = AV.Object.extend('Song');//选择表名
+       /* var SongObject = AV.Object.extend('Song');//选择表名
         var songObject = new SongObject();//生成一条数据
         songObject.save({
-            name:'If You Feel My Love',//数据里面的内容
-            singer:'Blaxy Girls',
-            url:'http://ovapiv064.bkt.clouddn.com/If%20You%20Feel%20My%20Love'
+            name:'我需要 (网路剧《美人计》主题曲)',//数据里面的内容
+            singer:'邓宁 - 我需要 (网路剧《美人计》主题曲)',
+            url:'http://ovapiv064.bkt.clouddn.com/%E6%88%91%E9%9C%80%E8%A6%81'
         }).then(function(object) {
             alert('保存成功');
         })*/

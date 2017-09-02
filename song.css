@@ -158,10 +158,12 @@ a{
     overflow: hidden;
     height:110px; 
 }
+.disk > .lyric > .name{
+    text-align:center;
+}
 .disk > .lyric > .name > h2{
     font-size:16px;
     line-height:1.5;
-    width:300px;
     overflow: hidden;
     color:#fefefe;
     text-overflow: ellipsis;
@@ -169,7 +171,7 @@ a{
 }
 .disk > .lyric > .song-lyric{
     margin-top:6px;
-    height:66px;
+    height:90px;
     overflow: hidden;
     text-align:center;
 }
@@ -178,9 +180,12 @@ a{
 }
 .disk > .lyric > .song-lyric > .lines >  p{
     color:#aeabac;
-    font-size:16px;
-    line-height:1.5;
-    margin-bottom: 12px;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    margin-bottom: 10px;
+    font-size:14px;
 }
 .disk > .lyric > .song-lyric > .lines >  .active{
     color:white;
