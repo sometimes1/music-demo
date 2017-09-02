@@ -51,6 +51,34 @@ a{
     transform: rotateZ(-25deg);
 }
 /*光盘*/
+@media screen and (min-width:375px){
+    .page > .disk > .circle {
+        width:296px;
+        height:296px;
+    }
+    .page > .disk >.circle::before{
+        background-image:url(//i.loli.net/2017/08/30/59a671f4bf65e.png);
+    }
+    .page > .disk > .circle::after{
+        background-image: url(//i.loli.net/2017/08/30/59a6720b67fc2.png);
+    }
+    .page > .disk > .circle > img{
+        width:184px;
+        height:184px;
+        margin:-92px 0 0 -92px;
+    }
+    .page >.disk > .lyric > .name > h2{
+        font-size:18px;
+    }
+    .page >.disk > .lyric > .song-lyric > .lines >  p{
+        padding-bottom:8px;
+        font-size:14px;
+    }
+    .page >.disk > .lyric{
+        height:110px;
+    }
+
+}
 .disk{
     position: absolute;
     top:70px;
@@ -60,8 +88,8 @@ a{
     text-align: center;
 }
 .disk > .circle{
-    width:296px;
-    height:296px;
+    width:248px;
+    height:248px;
     margin:0 auto;
     position:relative;
 }
@@ -73,7 +101,7 @@ a{
     width:100%;
     height:100%;
     z-index:1;
-    background: transparent url(//i.loli.net/2017/08/30/59a671f4bf65e.png) no-repeat center;
+    background: transparent url(//i.loli.net/2017/09/02/59aaa9be7ddc2.png) no-repeat center;
     background-size:cover;
 }
 .disk > .circle::after{
@@ -84,17 +112,17 @@ a{
     width:100%;
     z-index:2;
     height:100%;
-    background: url(//i.loli.net/2017/08/30/59a6720b67fc2.png) no-repeat center;
+    background: url(//i.loli.net/2017/09/02/59aaaa1cb30ec.png) no-repeat center;
     background-size:contain;
 }
 .disk > .circle > img{
     position:absolute;
     top:50%;
     left:50%;
-    width:184px;
-    height:184px;
-    margin-top:-92px;
-    margin-left:-92px;
+    width:150px;
+    height:150px;
+    margin-top:-75px;
+    margin-left:-75px;
     border-radius:50%;
     overflow:hidden;
     z-index:3;
@@ -153,16 +181,16 @@ a{
 /*歌词*/
 
 .disk > .lyric{
-    margin:0 35px;
+    padding:0 35px;
     margin-top:25px;
     overflow: hidden;
-    height:110px; 
+    height:80px; 
 }
 .disk > .lyric > .name{
     text-align:center;
 }
 .disk > .lyric > .name > h2{
-    font-size:16px;
+    font-size:15px;
     line-height:1.5;
     color:#fefefe;
     display: -webkit-box;
@@ -185,8 +213,8 @@ a{
     -webkit-margin-after: 1em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
-    margin-bottom: 10px;
-    font-size:14px;
+    margin-bottom: 5px;
+    font-size:12px;
 }
 .disk > .lyric > .song-lyric > .lines >  .active{
     color:white;
@@ -200,6 +228,7 @@ a{
     bottom: 29px;
     text-align:center;
     z-index:10;
+    margin-top:50px;
 }
 .actions > a{
     color:#d43b32;
