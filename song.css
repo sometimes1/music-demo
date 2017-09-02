@@ -165,19 +165,24 @@ a{
     color:#fefefe;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 1;  
+}
+.disk > .lyric > .song-lyric{
+    margin-top:6px;
+    height:66px;
     overflow: hidden;
+    text-align:center;
 }
-.disk > .lyric > .lines{
-    padding-top:23px;
+.disk > .lyric > .song-lyric > .lines{
+    transition:transform 0.3s;
 }
-.disk > .lyric > .lines >  p{
+.disk > .lyric > .song-lyric > .lines >  p{
     color:#aeabac;
     font-size:16px;
     line-height:1.5;
     margin-bottom: 12px;
 }
-.disk > .lyric > .lines >  .active{
+.disk > .lyric > .song-lyric > .lines >  .active{
     color:white;
 }
 

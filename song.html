@@ -23,7 +23,10 @@
             </div>
             <div class="lyric">
                 <div class="name"></div>
-                <div class="lines"></div>
+                <div class="song-lyric">
+                    <div class="lines"></div>
+                </div>
+                
             </div>
         </section>
 
@@ -65,8 +68,11 @@
           let audio = document.createElement('audio')
           audio.src = url
           $('body').append(audio)
-          audio.play()
+          audio.oncanplay = function(){
+            audio.play()
           $('.circle').addClass('playing')
+          }
+          
           $('.icon-pause3').on('click',function(){
               audio.pause()
               $('.circle').removeClass('playing')
@@ -104,13 +110,35 @@
                 }
             },500)
         })
-        var $lyric = $('.lyric')
+        var $lyric = $('.lyric > .song-lyric')
             array.map(function(song){
                 if(!song){return}
                 var $p =$('<p/>')
                 $p.attr('data-time',song.time).text(song.lyric)
                 $p.appendTo($lyric.children('.lines'))
             })
+        
+        /*var $lines = $('.lines > p')
+        array.map(function(song){
+            for(let i=0;i<$lines.length;i++){
+            let currentLineTime = $lines.eq(i).attr('data-time');
+            let nextLineTime = $lines.eq(i+1).attr('data-time');
+            if($lines.eq(i+1).length !==0 && currentLineTime < song.time && nextLineTime > song.time){
+                $lines.eq(i)
+            }
+            console.log($lines.eq(i))
+            if($lines.eq(i)){
+                $lines.eq(i).addClass('active').prev().removeClass('active')
+                let top = $lines.eq(i).offset().top;
+                console.log(top)
+                let linesTop = $('.lines').offset().top;
+                console.log(linesTop)
+                let delta = Math.floor(top - linesTop - $('.song-lyric').height()/3);
+                $('.lines').css('transform',`translateY(-${delta}px)`)
+                }
+            }
+        })*/
+        
     })
     </script>
 </body>
