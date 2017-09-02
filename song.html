@@ -72,6 +72,7 @@
             audio.play()
           $('.circle').addClass('playing')
           }
+          audio.oncanplay()
           $('.icon-pause3').on('click',function(){
               audio.pause()
               $('.circle').removeClass('playing')
