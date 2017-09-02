@@ -164,10 +164,11 @@ a{
 .disk > .lyric > .name > h2{
     font-size:16px;
     line-height:1.5;
-    overflow: hidden;
     color:#fefefe;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 .disk > .lyric > .song-lyric{
     margin-top:6px;
