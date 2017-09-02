@@ -91,6 +91,9 @@ a{
     .page >.actions{
         bottom:29px;
     }
+    .page > .actions > .a2{
+        margin-left:9px;
+    }
 
 }
 .disk{
