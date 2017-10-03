@@ -1,0 +1,701 @@
+body{
+    font-size:15px;
+    font-family: Helvetica,sans-serif;
+    color:#333;
+}
+
+/*topbar*/
+section.topbar{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    padding:17px 10px;
+    background:#D43c33;
+    z-index:1;
+    /*padding:5.3125vw 3.125vw*/
+}
+section.topbar .logo >svg{
+    width:142px;
+    /*width:44.375vw
+    height:7.8125vw
+    */
+    height: 25px;
+    vertical-align: top;
+}
+section.topbar > a{
+    color:white;
+    display:inline-block;
+    font-size:15px;
+    /*
+    font-size:4.6875vw
+    padding:1.5625vw 3.4375vw
+    line-height:6.25vw;
+    */
+    padding:5px 10px;
+    line-height: 20px;
+    position: relative;
+}
+section.topbar > a::after{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    border-radius:50px;
+    /*border-radius:15.625vw*/
+    width:200%;
+    height: 200%;
+    border:1px solid white;
+    -webkit-transform:scale(0.5);
+            transform:scale(0.5);
+    -webkit-transform-origin:0 0 ;
+            transform-origin:0 0 ;
+}
+
+/*tabs组件 */
+.tabs{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    position:fixed;
+    width:100%;
+    top: 64px;
+    left: 0;
+    z-index:1;
+    background:#fff;
+}
+.u-tabs::after{
+    content:'';
+    width:200%;
+    height: 200%;
+    position: absolute;
+    top:0;
+    left:0;
+    border-bottom:1px solid #ccc;
+    -webkit-transform:scale(.5);
+            transform:scale(.5);
+    -webkit-transform-origin:top left;
+            transform-origin:top left;
+    z-index:-1;
+}
+.tabs >li {
+    width:33.333333%;
+    color: #333;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor:pointer;
+}
+.tabs > li > .text{
+    padding:10px 5px;
+    position:relative;
+}
+.tabs > li.active{
+    color: #d33a31;
+}
+.tabs > li.active > .text::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    background: #D43C33;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+/*推荐歌单*/
+.tab-content >li {
+    display:none;
+}
+.tab-content > .active{
+    display:block;
+}
+
+.playlists{
+    margin-top:104px;
+    padding-top:17px;
+}
+.playlists > h2{
+    font-size:17px;
+    margin-bottom:14px;
+    position: relative;
+    padding-left:9px;
+}
+.playlists > h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 55%;
+    margin-top: -9px;
+    width: 2px;
+    height: 16px;
+    background-color: #d33a31;
+}
+.playlists > .song{
+    
+    display:-webkit-box;
+    
+    display:-ms-flexbox;
+    
+    display:flex;
+    -ms-flex-wrap:wrap;
+        flex-wrap:wrap;
+    -webkit-box-pack:justify;
+        -ms-flex-pack:justify;
+            justify-content:space-between;
+    font-size:13px;
+}
+.playlists > .song > li{
+    width:32.8%;
+    padding-bottom:10px;
+    position: relative;
+}
+.playlists > .song > li > .cover > img{
+    width:100%;
+}
+.playlists > .song > li > p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 18px;
+    height: 40px;
+    padding: 3px 2px 0 6px;
+}
+.playlists > .song > li > i{
+    position: absolute;
+    top:2px;
+    right:5px;
+    font-size:12px;
+    color:white;
+}
+
+
+/*最新音乐*/
+
+.songs{
+    padding-top:22px;
+}
+.songs > h2{
+    font-size:17px;
+    margin-bottom:14px;
+    line-height: 20px;
+    position: relative;
+    padding-left:9px;
+}
+.songs > h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -9px;
+    width: 2px;
+    height: 16px;
+    background-color: #d33a31;
+}
+.songs > .list > li{
+    padding:6px  0;
+    margin-left:10px;
+    position:relative;
+    border-bottom:1px solid #e8e8e8;
+}
+.songs > .list{
+    position: relative;
+}
+.songs > .list > li > a > h3{
+    font-size:17px;
+    overflow: hidden;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right:50px;
+}
+.songs > .list > li > a > p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:12px;
+    color:#888;
+    line-height: 18px;
+    margin-right:50px;
+}
+
+.songs > .list > li:nth-child(1) > a > p > i,
+.songs > .list > li:nth-child(2) > a > p > i,
+.songs > .list > li:nth-child(3) > a > p > i,
+.songs > .list > li:nth-child(5) > a > p > i,
+.songs > .list > li:nth-child(9) > a > p > i{
+    display:inline-block;
+    width: 12px;
+    height: 8px;
+    margin-right: 4px;
+    background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat;
+    background-size: 166px 97px;
+}
+.songs > .list > li > a > div{
+    width: 22px;
+    height: 22px;
+    background-position: -24px 0;
+    background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat -24px 0;
+    background-size: 166px 97px;
+    position: absolute;
+    right:10px;
+    bottom:50%;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+}
+
+.songs > .list > #songs-loading{
+    background:transparent url(//i.loli.net/2017/08/31/59a799c464b79.gif) no-repeat;
+    width:30px;
+    height: 30px;
+    background-size:20px;
+    position: absolute;
+    bottom:50%;
+    left:50%;
+}
+
+/*网易云音乐大logo*/
+
+.art{
+    padding-top:53.3%;
+    margin-top:4px;
+    background:url(//i.loli.net/2017/08/24/599e6aa8a91c2.png) no-repeat;
+    background-size:contain;
+    position:relative;
+}
+.logo-top{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    text-align:center;
+}
+.logo-top > .logo {
+    padding-top:16.9%;
+}
+.logo-top > .logo >svg{
+    width: 230px;
+    height: 44px;
+}
+.logo-top > .link{
+    line-height: 38px;
+    border: 1px solid #d33a31;
+    border-radius: 38px;
+    font-size: 16px;
+    color: #d33a31;
+    margin: 12px 37px 5px;
+}
+.logo-top > .copyright{
+    color: #888;
+    font-size: 12px;
+    line-height: 16px;
+    -webkit-transform: scale(.75);
+            transform: scale(.75);
+}
+
+
+/*page2*/
+
+.hot-song{
+    margin-top:104px;
+}
+.hot-song > .background{
+    position: relative;
+    padding-top: 38.9%;
+    background-size: contain;
+    background-image: url(//i.loli.net/2017/08/27/59a2ba0edd1dc.jpg);
+}
+.hot-song > .background > .hot-top{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    padding-left:20px;
+    background:rgba(0,0,0,.2);
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+.hot-song > .background > .hot-top > .logo{
+    width:142px;
+    height:67px;
+    background:transparent url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat -24px -30px;
+    background-size: 166px 97px;
+}
+.hot-song > .background > .hot-top > .hot-time{
+    margin-top:10px;
+    color:hsla(0,0%,100%,.8);
+    font-size:12px;
+    -webkit-transform:scale(.91);
+            transform:scale(.91);
+    -webkit-transform-origin:left top;
+            transform-origin:left top;
+}
+
+/*歌单列表*/
+
+.hot-list > .list{
+    margin-left:10px;
+}
+.hot-list > .list > li{
+    margin-left:30px;
+    position:relative;
+    padding:6px 0;
+    left:-2px;
+    border-bottom:1px solid #e8e8e8;
+}
+
+.hot-list > .list > li > a > h3{
+    font-size:17px;
+    overflow: hidden;
+    line-height: 25px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right:50px;
+}
+.hot-list >.list > li > a > p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:12px;
+    color:#888;
+    line-height: 17px;
+    margin-right:50px;
+    
+}
+
+.hot-list >.list > li > a > .button{
+    width: 22px;
+    height: 22px;
+    background-position: -24px 0;
+    background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat -24px 0;
+    background-size: 166px 97px;
+    position: absolute;
+    right:8px;
+    bottom:50%;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);         
+}
+.hot-list > .list > li> a > .number{
+    position: absolute;
+    top:34%;
+    left:-28px;
+    font-size:17px;
+    width:25px;
+    color:#999;
+}
+.hot-list > .list > li:nth-child(1) > a > .number,
+.hot-list > .list > li:nth-child(2) > a > .number,
+.hot-list > .list > li:nth-child(3) > a > .number{
+    color:#d33a31;
+}
+.hot-list > .list > li:nth-child(1) > a > p > i,
+.hot-list > .list > li:nth-child(2) > a > p > i,
+.hot-list > .list > li:nth-child(3) > a > p > i,
+.hot-list > .list > li:nth-child(5) > a > p > i,
+.hot-list > .list > li:nth-child(10) > a > p > i,
+.hot-list > .list > li:nth-child(8) > a > p > i,
+.hot-list > .list > li:nth-child(15) > a > p > i{
+    display:inline-block;
+    width: 12px;
+    height: 8px;
+    margin-right: 4px;
+    background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat;
+    background-size: 166px 97px; 
+}
+.hot-list > .more{
+    height:55px;
+    line-height:55px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.hot-list > .more > span{
+    color:#999;
+    font-size:14px;
+}
+.hot-list > .more > span > i{
+    color:rgba(232,232,232,.9);
+    font-size:12px;
+    padding-left:1px;
+}
+/*搜索*/
+.seek{
+    margin-top:104px;
+}
+.seek > .seek-top{
+    padding:15px 10px;
+    border-bottom:1px solid #e8e8e8;
+}
+.seek > .seek-top > .inputcover{
+    position:relative;
+    width:100%;
+    height: 30px;
+    padding:0 30px;
+    background: #ebecec;
+    border-radius:30px;
+}
+.seek > .seek-top > .inputcover > i{
+    position:absolute;
+    left:0;
+    top:9px;
+    margin:0 8px;
+    vertical-align:middle;
+    width:13px;
+    height:13px;
+    color:rgb(201,201,201);
+}
+.seek > .seek-top > .inputcover > input{
+    width:100%;
+    height:30px;
+    line-height:18px;
+    background: transparent;
+    font-size:14px;
+    color:#333;
+    -webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
+    cursor: auto;
+}
+.seek > .seek-top > .inputcover > ::-webkit-input-placeholder{
+    font-size:14px;
+    color:#c9c9c9;
+}
+.seek > .seek-top > .inputcover > .close{
+    display:none;
+    
+}
+.seek > .seek-top > .inputcover > .active{
+    display:block;
+    position: absolute;
+    right:0;
+    top:0;
+    width:30px;
+    height:30px;
+    line-height:28px;
+    text-align:center;
+}
+.icon-closecircled:before{
+    vertical-align:middle;
+    width:14px;
+    height:14px;
+    color:#bcbdbd;
+}
+
+/*热门搜索*/
+.seek > .hot-seek{
+    padding:15px 10px 0;
+    margin-top:-1px;
+}
+.seek > .hot-seek > h3{
+    font-size:12px;
+    line-height:12px;
+    color:#666;
+}
+.seek > .hot-seek > ul{
+    margin:10px 0 7px;
+}
+.seek > .hot-seek > ul > li{
+    display:inline-block;
+    height:32px;
+    margin-right: 4px;
+    margin-bottom: 8px;
+    padding: 0 14px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #333;
+    position:relative;
+    cursor:pointer;
+}
+.seek > .hot-seek > ul > li:after{
+    content:'';
+    width: 200%;
+    height: 200%;
+    border-radius:32px;
+    -webkit-transform:scale(.5);
+            transform:scale(.5);
+    border:1px solid #d3d4da;
+    position:absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+}
+/*热歌列表*/
+.hotlist > ul > li{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    height:45px;
+}
+.hotlist > ul > li > i{
+    margin:0 10px;
+    vertical-align:middle;
+    width:15px;
+    height:15px;
+    color:#c9caca;
+}
+.hotlist > ul > li > div{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+        flex: 1;
+    width: 1%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+    height: 45px;
+    position: relative;
+    border-bottom:1px solid #e8e8e8;
+}
+.hotlist > ul > li > div > span{
+    margin-right:10px;
+    font-size:14px;
+    cursor:pointer;
+}
+.hotlist > ul > li > div >.close-1{
+    width: 32px;
+    height: 32px;
+    position:absolute;
+    right:7px;
+    top:12px;
+}
+.hotlist > ul > li > div >.close-1 > i{
+    margin-left:2px;
+    vertical-align: middle;
+    font-size:25px;
+    color:#999899;
+}
+
+
+
+/*搜索结果*/
+#searchResult > li{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    height:45px;
+}
+#searchResult > li > i{
+    margin:0 8px;
+    vertical-align:middle;
+    width:13px;
+    height:13px;
+    color:rgb(201,201,201);
+}
+
+/*搜索xxx*/
+.seek > .search-content{
+    border-bottom:1px solid #e8e8e8;
+}
+.search-content > h3{
+    position: relative;
+    height: 50px;
+    margin-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    line-height: 50px;
+    color: #507daf;
+}
+
+/*暂无搜索结果*/
+
+#searchResult div{
+    padding:20px 0;
+    text-align:center;
+}
+
+/*显示搜索*/
+#searchResult >.list > li{
+    padding:6px  0;
+    margin-left:10px;
+    position:relative;
+    border-bottom:1px solid #e8e8e8;
+}
+
+#searchResult > .list > li > a > h3{
+    font-size:17px;
+    overflow: hidden;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right:50px;
+}
+#searchResult > .list > li > a > h3 > span{
+    margin-left:4px;
+    color:#888;
+}
+#searchResult > .list > li > a > h3 > .black{
+    margin-left:4px;
+    color:#333;
+}
+#searchResult > .list > li > a > p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:12px;
+    color:#888;
+    line-height: 18px;
+    margin-right:50px;
+}
+#searchResult > .list > li > a > p > i{
+    display:inline-block;
+    width: 12px;
+    height: 8px;
+    margin-right: 4px;
+    background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat;
+    background-size: 166px 97px;
+}
+#searchResult > .list > li > a > div{
+    width: 22px;
+    height: 22px;
+    background-position: -24px 0;
+    background:url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat -24px 0;
+    background-size: 166px 97px;
+    position: absolute;
+    right:10px;
+    bottom:0;
+}
+/*# sourceMappingURL=home.css.map */
