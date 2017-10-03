@@ -27,4 +27,15 @@ gulp.task('js',() =>
         .pipe(gulp.dest('dist'))
 );
 
+gulp.task('watch',function(){
+    var watcher1 = gulp.watch('src/**/*.js', ['js']);
+    watcher1.on('change', function(event) {
+    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+});
+    var watcher2 = gulp.watch('src/**/*.css', ['css']);
+    watcher2.on('change', function(event) {
+    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+});
+})
+
 gulp.task('default',['css','js'])
