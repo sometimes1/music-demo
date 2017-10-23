@@ -78,7 +78,7 @@ a{
         font-size:14px;
     }
     .page >.disk > .lyric{
-        height:90px;
+        height:100px;
     }
     .page > .disk > .lyric > .song-lyric{
         height:90px;
@@ -204,7 +204,7 @@ a{
     padding:0 35px;
     margin-top:25px;
     overflow: hidden;
-    height:80px; 
+    height:90px; 
 }
 .disk > .lyric > .name{
     text-align:center;
