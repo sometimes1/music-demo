@@ -204,10 +204,11 @@ a{
     padding:0 35px;
     margin-top:25px;
     overflow: hidden;
-    height:80px; 
+    height:90px; 
 }
 .disk > .lyric > .name{
     text-align:center;
+    width:300px;
 }
 .disk > .lyric > .name > h2{
     font-size:15px;
