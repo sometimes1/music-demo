@@ -67,6 +67,9 @@ a{
         height:184px;
         margin:-92px 0 0 -92px;
     }
+    .page >.disk > .lyric > .name{
+        width:300px;
+    }
     .page >.disk > .lyric > .name > h2{
         font-size:18px;
     }
@@ -75,7 +78,7 @@ a{
         font-size:14px;
     }
     .page >.disk > .lyric{
-        height:120px;
+        height:90px;
     }
     .page > .disk > .lyric > .song-lyric{
         height:90px;
