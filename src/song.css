@@ -78,10 +78,10 @@ a{
         font-size:14px;
     }
     .page >.disk > .lyric{
-        height:100px;
+        height:125px;
     }
     .page > .disk > .lyric > .song-lyric{
-        height:90px;
+        height:110px;
     }
     .page > .pointer >img{
         width:96px;
