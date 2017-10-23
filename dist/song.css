@@ -65,7 +65,7 @@ a{
     -webkit-transform: rotateZ(-25deg);
             transform: rotateZ(-25deg);
 }
-/*光盘*/
+
 @media screen and (min-width:375px){
     .page > .disk > .circle {
         width:296px;
@@ -82,6 +82,9 @@ a{
         height:184px;
         margin:-92px 0 0 -92px;
     }
+    .page >.disk > .lyric > .name{
+        width:300px;
+    }
     .page >.disk > .lyric > .name > h2{
         font-size:18px;
     }
@@ -90,10 +93,10 @@ a{
         font-size:14px;
     }
     .page >.disk > .lyric{
-        height:120px;
+        height:125px;
     }
     .page > .disk > .lyric > .song-lyric{
-        height:90px;
+        height:110px;
     }
     .page > .pointer >img{
         width:96px;
@@ -226,10 +229,11 @@ a{
     padding:0 35px;
     margin-top:25px;
     overflow: hidden;
-    height:80px; 
+    height:90px; 
 }
 .disk > .lyric > .name{
     text-align:center;
+    width:250px;
 }
 .disk > .lyric > .name > h2{
     font-size:15px;
@@ -242,7 +246,7 @@ a{
 }
 .disk > .lyric > .song-lyric{
     margin-top:6px;
-    height:50px;
+    height:88px;
     overflow: hidden;
     text-align:center;
 }
